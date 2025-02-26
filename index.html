@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfólio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#habilidades" class="menu-link">Habilidades</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/eu.jpeg" alt="Foto de Vinicius Soares" class="foto-perfil">
+        <h1>Vinicius Soares</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front-End</p>
+
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Sou desenvolvedor lalalalla</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulos">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <a href="https://github.com/vinihdc/Maestro_Contabilidade" target="_blank">
+                    <img src="./img/contabilidade.png" alt="Projeto 1" class="projetos-imagem">
+                </a>
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Maestro Contabilidade</h3>
+                    <p class="paragrafo-projetos">App que facilita operações contábeis essenciais, como razão, razonete
+                        e balancete, proporcionando mais agilidade e precisão na gestão financeira.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/traks.png" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Cardápio</h3>
+                    <p class="paragrafo-projetos">loja</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/traks.png" alt="Projeto 3" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Microsoft</h3>
+                    <p class="paragrafo-projetos">software</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="habilidades">
+        <h2 class="projetos-titulos">Habilidades</h2>
+        <div class="projetos-caixa-habilidades">
+            <div class="projetos-card-habilidades">
+                <img src="./img/react.png" alt="REACTJS" class="projetos-imagem">
+            </div>
+
+            <div class="projetos-card-habilidades">
+                <img src="./img/js.png" alt="JAVASCRIPT" class="projetos-imagem">
+            </div>
+
+            <div class="projetos-card-habilidades">
+                <img src="./img/node.png" alt="NODEJS" class="projetos-imagem">
+            </div>
+
+            <div class="projetos-card-habilidades">
+                <img src="./img/mongodb.png" alt="MONGODB" class="projetos-imagem">
+            </div>
+
+            <div class="projetos-card-habilidades">
+                <img src="./img/html.png" alt="HTML" class="projetos-imagem">
+            </div>
+
+            <div class="projetos-card-habilidades">
+                <img src="./img/css.png" alt="CSS" class="projetos-imagem">
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input id="nome" placeholder="Nome" class="campo-form">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" id="mensagem" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+
+        <section id="projetos" class="projetos">
+            <h2 class="projetos-titulos">Redes Sociais</h2>
+            <div class="projetos-caixa-habilidades">
+                <div class="projetos-card-habilidades">
+                    <a href="https://www.linkedin.com/in/vini-soa" target="_blank">
+                        <img src="./img/linkedin.png" alt="Linkedin" class="projetos-imagem">
+                    </a>
+                </div>
+
+                <div class="projetos-card-habilidades">
+                    <a href="https://github.com/vinihdc" target="_blank">
+                        <img src="./img/github.png" alt="Github" class="projetos-imagem">
+                    </a>
+                </div>
+
+        </section>
+
+        <script>
+            function enviarWhats(event) {
+                event.preventDefault()
+
+                const nome = document.getElementById('nome').value;
+                const mensagem = document.getElementById('mensagem').value;
+                const telefone = '5513988168347';
+
+                const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+
+                const msgFormatada = encodeURIComponent(texto)
+
+                const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+                window.open(url, '_blank')
+            }
+        </script>
+
+</body>
+
+</html>
